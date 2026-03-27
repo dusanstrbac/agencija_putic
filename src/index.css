@@ -1,0 +1,138 @@
+/* RESET */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.5;
+  scroll-behavior: smooth;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+.app-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  flex: 1; /* rastezanje glavnog sadržaja, footer ostaje na dnu */
+}
+
+/* ROOT VARIJABLE (DESIGN SYSTEM) */
+:root {
+  /* PRIMARY (poverenje, osiguranje) */
+  --color-primary: #2563eb;
+  --color-primary-hover: #1d4ed8;
+
+  /* NEUTRAL */
+  --color-bg: #ffffff;
+  --color-bg-secondary: #f9fafb;
+
+  --color-text: #1f2937;
+  --color-text-light: #6b7280;
+
+  --color-border: #e5e7eb;
+
+  /* ACCENT (diskretno) */
+  --color-accent: #0ea5e9;
+
+  /* SHADOW */
+  --shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 10px 25px rgba(0, 0, 0, 0.08);
+
+  /* BORDER RADIUS */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+
+  /* SPACING */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 40px;
+}
+
+/* GLOBAL ELEMENTI */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+/* CONTAINER (koristi svuda) */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* BUTTON (reusable) */
+.btn {
+  display: inline-block;
+  padding: 10px 18px;
+  border-radius: var(--radius-sm);
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+/* PRIMARY BUTTON */
+.btn-primary {
+  background: var(--color-primary);
+  color: white;
+}
+
+.btn-primary:hover {
+  background: var(--color-primary-hover);
+}
+
+/* SECONDARY BUTTON */
+.btn-secondary {
+  background: var(--color-bg-secondary);
+  color: var(--color-text);
+}
+
+.btn-secondary:hover {
+  background: #f3f4f6;
+}
+
+/* SECTION SPACING */
+.section {
+  padding: 60px 0;
+}
+
+/* TITLES */
+.section-title {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.section-subtitle {
+  color: var(--color-text-light);
+  max-width: 600px;
+}

@@ -1,0 +1,165 @@
+.header {
+  width: 100%;
+  background: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 70px;
+}
+
+/* LOGO */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* razmak između slike i teksta */
+}
+
+.logo-img {
+  width: 60px; /* prilagodi veličinu loga */
+  height: 60px;
+  object-fit: contain;
+}
+
+.logo-text {
+  font-size: 20px;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+/* NAV */
+.nav {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+.nav a,
+.dropdown-title {
+  text-decoration: none;
+  color: #374151;
+  font-size: 15px;
+  cursor: pointer;
+  transition: color 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* strelica */
+.arrow {
+  width: 6px;
+  height: 6px;
+  border-right: 2px solid #374151;
+  border-bottom: 2px solid #374151;
+  transform: rotate(45deg);
+  transition: transform 0.2s ease;
+  margin-top: 2px;
+}
+
+/* rotacija kad je otvoren dropdown */
+.arrow.rotate {
+  transform: rotate(225deg);
+}
+
+.nav a:hover,
+.dropdown-title:hover {
+  color: #2563eb;
+}
+
+/* DROPDOWN */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  border: 1px solid #e5e7eb;
+  padding: 10px 0;
+  min-width: 260px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  border-radius: 8px;
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 10px 15px;
+  font-size: 14px;
+}
+
+.dropdown-menu a:hover {
+  background: #f9fafb;
+}
+
+/* HAMBURGER */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: #374151;
+  border-radius: 2px;
+}
+
+/* MOBILE MENU */
+.mobile-menu {
+  display: none;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .nav {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .mobile-menu {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 15px;
+    background: white;
+    border-top: 1px solid #e5e7eb;
+  }
+
+  .mobile-menu a {
+    text-decoration: none;
+    color: #374151;
+    font-size: 16px;
+  }
+
+  .mobile-dropdown span {
+    font-weight: 600;
+  }
+
+  .mobile-submenu {
+    margin-top: 10px;
+    padding-left: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+}

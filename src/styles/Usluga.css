@@ -1,0 +1,118 @@
+.top-container {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.service-detail {
+  padding: 60px 20px;
+  background-color: #f9f9f9;
+}
+
+.service-detail .container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.service-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #1e2a38;
+}
+
+.service-detail .icon {
+  font-size: 4rem;
+  color: #0073e6;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.service-content {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.service-content h2 {
+  text-decoration: 1px underline black;
+  text-underline-offset: 4px;
+}
+
+.service-content h3 {
+  font-size: 1.5rem;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  color: #1e2a38;
+}
+
+.service-content ul {
+  list-style: disc inside;
+  margin-left: 20px;
+  margin-bottom: 15px;
+}
+
+.service-content li {
+  margin-bottom: 8px;
+}
+
+.service-footer {
+  font-style: italic;
+  background-color: #eef5fb;
+  padding: 15px;
+  border-left: 4px solid #0073e6;
+  margin-bottom: 25px;
+  color: #555;
+}
+
+.service-buttons {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+  align-items: center;
+}
+
+.service-buttons .btn {
+  padding: 10px 25px;
+  font-size: 1rem;
+  border-radius: 5px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-outline {
+  background: none;
+  border: 2px solid #0073e6;
+  color: #0073e6;
+}
+
+.btn-outline:hover {
+  background-color: #0073e6;
+  color: #fff;
+}
+
+.btn-primary {
+  background-color: #0073e6;
+  border: none;
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background-color: #005bb5;
+}
+
+@media (max-width: 768px) {
+    .top-container {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+}
