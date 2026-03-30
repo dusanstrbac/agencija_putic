@@ -13,7 +13,7 @@ function Footer() {
           <a href="https://www.facebook.com/people/Agencija-Puti%C4%87/61567014200971/" target="_blank" rel="noopener noreferrer">
             <FaFacebookF />
           </a>
-          <a href="https://www.instagram.com/mladen.jakovljevic980/" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.instagram.com/agencija_putic" target="_blank" rel="noopener noreferrer">
             <FaInstagram />
           </a>
         </div>

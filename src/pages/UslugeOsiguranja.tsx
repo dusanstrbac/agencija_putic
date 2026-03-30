@@ -5,7 +5,7 @@ import { MdHealthAndSafety } from "react-icons/md";
 import { Link } from "react-router-dom";
 
 interface ServiceButton {
-  type: "detalji" | "kontakt" | "kupi";
+  type: "detalji" | "kontakt" | "kupi" | "kupiIndividualno" | "kupiPorodicno";
   link: string;
 }
 
@@ -27,9 +27,9 @@ export const services: Service[] = [
     desc: "Sigurno putujte uz pokriće troškova lečenja i asistenciju u inostranstvu.",
     icon: <FaPlane />,
     buttons: [
-      { type: "detalji", link: "/usluga/putno-zdravstveno-osiguranje" },
+      { type: "kupiIndividualno", link: "https://webshop.uniqa.rs/Putno-osiguranje/2/Individualno/Podaci-o-osiguranju?Agent=1158733" },
       { type: "kontakt", link: "mailto:mladen.jakovljevic@uniqa.rs?subject=Putno zdravstveno osiguranje" },
-      { type: "kupi", link: "#" }
+      { type: "kupiPorodicno", link: "https://webshop.uniqa.rs/Putno-osiguranje/1/Porodicno/Podaci-o-osiguranju?Agent=1158733" }
     ],
     span: 2,
     slug: "putno-zdravstveno-osiguranje"
@@ -41,7 +41,7 @@ export const services: Service[] = [
     buttons: [
       { type: "detalji", link: "/usluga/osiguranje-domacinstva" },
       { type: "kontakt", link: "mailto:mladen.jakovljevic@uniqa.rs?subject=Osiguranje domaćinstva" },
-      { type: "kupi", link: "https://webshop.uniqa.rs/Domacinstvo/Podaci-o-objektu"}
+      { type: "kupi", link: "https://webshop.uniqa.rs/Domacinstvo/Podaci-o-objektu?Agent=1158733"}
     ],
     slug: "osiguranje-domacinstva"
   },
@@ -61,7 +61,8 @@ export const services: Service[] = [
     icon: <FaCar />,
     buttons: [
       { type: "detalji", link: "/usluga/kasko-osiguranje-i-pomoc-na-putu" },
-      { type: "kontakt", link: "mailto:mladen.jakovljevic@uniqa.rs?subject=Kasko osiguranje i pomoć na putu" }
+      { type: "kontakt", link: "mailto:mladen.jakovljevic@uniqa.rs?subject=Kasko osiguranje i pomoć na putu" },
+      { type: "kupi", link: "https://www.uniqa.rs/UNIQA/534/Online-kupovina/Pomoc-na-putu-Web-shop?Agent=1158733"}
     ],
     span: 2,
     slug: "kasko-osiguranje-i-pomoc-na-putu"
@@ -178,10 +179,22 @@ function UslugeOsiguranja() {
                     );
                   if (btn.type === "kupi")
                     return (
-                      <a key={i} href={btn.link} className="btn btn-primary">
+                      <a key={i} href={btn.link} target="_blank" className="btn btn-primary">
                         Kupi online
                       </a>
                     );
+                  if (btn.type === "kupiIndividualno")
+                    return (
+                      <a key={i} href={btn.link} className="btn btn-primary" target="_blank">
+                        Kupi individualno
+                      </a>
+                    );
+                  if (btn.type === "kupiPorodicno")
+                    return (
+                      <a key={i} href={btn.link} className="btn btn-primary" target="_blank">
+                        Kupi porodicno
+                      </a>
+                    );  
                   return null;
                 })}
               </div>

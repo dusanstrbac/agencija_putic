@@ -44,21 +44,35 @@ function Usluga() {
         <div className="service-buttons">
           {buttonsToRender.map((btn, index) => {
             const isKupi = btn.type === "kupi";
-            
+            const isKupiIndividualno = btn.type === "kupiIndividualno";
+            const isKupiPorodicno = btn.type === "kupiPorodicno";
+            let buttonText = "";
+            const isAnyKupovina = isKupi || isKupiIndividualno || isKupiPorodicno;
+
             // Provera da li je link definisan
             if (!btn.link || btn.link === "#") {
-                if (isKupi) return null; // Ne prikazuj "Kupi" ako nema linka
+                if (isAnyKupovina) return null; // Ne prikazuj "Kupi" ako nema linka
+            }
+
+            if (isKupi) {
+              buttonText = "Kupi online";
+            } else if (isKupiIndividualno) {
+              buttonText = "Kupi individualno";
+            } else if (isKupiPorodicno) {
+              buttonText = "Kupi porodično";
+            } else {
+              buttonText = "Kontaktiraj savetnika";
             }
 
             return (
               <a
                 key={index}
                 href={btn.link}
-                className={`btn ${isKupi ? "btn-primary" : "btn-outline"}`}
-                target={isKupi ? "_blank" : undefined}
-                rel={isKupi ? "noopener noreferrer" : undefined}
+                className={`btn ${isAnyKupovina ? "btn-primary" : "btn-outline"}`}
+                target={isAnyKupovina ? "_blank" : undefined}
+                rel={isAnyKupovina ? "noopener noreferrer" : undefined}
               >
-                {isKupi ? "Kupi online" : "Kontaktiraj savetnika"}
+                {buttonText}
               </a>
             );
           })}

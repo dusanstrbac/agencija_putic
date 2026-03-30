@@ -40,7 +40,7 @@ function Header() {
             )}
           </div>
 
-          <a href="contact">Kontakt</a>
+          <a href="/contact">Kontakt</a>
         </nav>
 
         {/* Hamburger */}
@@ -70,7 +70,7 @@ function Header() {
             </div>
           </div>
 
-          <a href="contact">Kontakt</a>
+          <a href="/contact">Kontakt</a>
         </div>
       )}
     </header>

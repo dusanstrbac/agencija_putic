@@ -3,7 +3,7 @@ import type { ReactNode } from "react";
 export interface ServiceDetail {
   slug: string;
   content: ReactNode;
-  buttons?: ("kontakt" | "kupi")[];
+  buttons?: ("kontakt" | "kupi" | "kupiIndividualno" | "kupiPorodicno")[];
 }
 
 export const serviceDetails: ServiceDetail[] = [
@@ -44,7 +44,7 @@ export const serviceDetails: ServiceDetail[] = [
         </ul>
       </>
     ),
-    buttons: ["kontakt"],
+    buttons: ["kontakt", "kupiIndividualno", "kupiPorodicno"],
   },
   {
     slug: "osiguranje-domacinstva",

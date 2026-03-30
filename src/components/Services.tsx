@@ -16,9 +16,9 @@ const services = [
     desc: "Sigurno putujte uz pokriće troškova lečenja i asistenciju u inostranstvu.",
     icon: <FaPlane />,
     buttons: [
-      { type: "detalji", link: "/usluga/putno-zdravstveno-osiguranje" },
+      { type: "kupiIndividualno", link: "https://webshop.uniqa.rs/Putno-osiguranje/2/Individualno/Podaci-o-osiguranju?Agent=1158733" },
       { type: "kontakt", link: "mailto:mladen.jakovljevic@uniqa.rs?subject=Putno zdravstveno osiguranje" },
-      { type: "kupi", link: "#" }
+      { type: "kupiPorodicno", link: "https://webshop.uniqa.rs/Putno-osiguranje/1/Porodicno/Podaci-o-osiguranju?Agent=1158733" }
     ],
     span: 2,
   },
@@ -28,7 +28,7 @@ const services = [
     icon: <FaHome />,
     buttons: [
       { type: "kontakt", link: "mailto:mladen.jakovljevic@uniqa.rs?subject=Osiguranje domaćinstva" },
-      { type: "kupi", link: "https://webshop.uniqa.rs/Domacinstvo/Podaci-o-objektu" }
+      { type: "kupi", link: "https://webshop.uniqa.rs/Domacinstvo/Podaci-o-objektu?Agent=1158733" }
     ],
   },
   {
@@ -165,6 +165,18 @@ function Services() {
                     return (
                       <a key={i} href={btn.link} className="btn btn-primary" target="_blank">
                         Kupi online
+                      </a>
+                    );
+                  if (btn.type === "kupiIndividualno")
+                    return (
+                      <a key={i} href={btn.link} className="btn btn-primary" target="_blank">
+                        Kupi individualno
+                      </a>
+                    );
+                  if (btn.type === "kupiPorodicno")
+                    return (
+                      <a key={i} href={btn.link} className="btn btn-primary" target="_blank">
+                        Kupi porodicno
                       </a>
                     );
                   return null;
