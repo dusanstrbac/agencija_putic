@@ -5,7 +5,8 @@ import { MdHealthAndSafety } from "react-icons/md";
 import { Link } from "react-router-dom";
 
 interface ServiceButton {
-  type: "detalji" | "kontakt" | "kupi" | "kupiIndividualno" | "kupiPorodicno";
+  // Dodati novi tipovi ovde
+  type: "detalji" | "kontakt" | "kupi" | "kupiIndividualno" | "kupiPorodicno" | "kupiKasko" | "kupiPomocNaPutu";
   link: string;
 }
 
@@ -28,7 +29,7 @@ export const services: Service[] = [
     icon: <FaPlane />,
     buttons: [
       { type: "kupiIndividualno", link: "https://webshop.uniqa.rs/Putno-osiguranje/2/Individualno/Podaci-o-osiguranju?Agent=1158733" },
-      { type: "kontakt", link: "mailto:mladen.jakovljevic@uniqa.rs?subject=Putno zdravstveno osiguranje" },
+      { type: "kontakt", link: "mailto:jakovljevicml980@gmail.com?subject=Putno zdravstveno osiguranje" },
       { type: "kupiPorodicno", link: "https://webshop.uniqa.rs/Putno-osiguranje/1/Porodicno/Podaci-o-osiguranju?Agent=1158733" }
     ],
     span: 2,
@@ -40,7 +41,7 @@ export const services: Service[] = [
     icon: <FaHome />,
     buttons: [
       { type: "detalji", link: "/usluga/osiguranje-domacinstva" },
-      { type: "kontakt", link: "mailto:mladen.jakovljevic@uniqa.rs?subject=Osiguranje domaćinstva" },
+      { type: "kontakt", link: "mailto:jakovljevicml980@gmail.com?subject=Osiguranje domaćinstva" },
       { type: "kupi", link: "https://webshop.uniqa.rs/Domacinstvo/Podaci-o-objektu?Agent=1158733"}
     ],
     slug: "osiguranje-domacinstva"
@@ -51,7 +52,7 @@ export const services: Service[] = [
     icon: <FaHeart />,
     buttons: [
       { type: "detalji", link: "/usluga/zivotno-osiguranje" },
-      { type: "kontakt", link: "mailto:mladen.jakovljevic@uniqa.rs?subject=Životno osiguranje" }
+      { type: "kontakt", link: "mailto:jakovljevicml980@gmail.com?subject=Životno osiguranje" }
     ],
     slug: "zivotno-osiguranje"
   },
@@ -61,8 +62,9 @@ export const services: Service[] = [
     icon: <FaCar />,
     buttons: [
       { type: "detalji", link: "/usluga/kasko-osiguranje-i-pomoc-na-putu" },
-      { type: "kontakt", link: "mailto:mladen.jakovljevic@uniqa.rs?subject=Kasko osiguranje i pomoć na putu" },
-      { type: "kupi", link: "https://www.uniqa.rs/UNIQA/534/Online-kupovina/Pomoc-na-putu-Web-shop?Agent=1158733"}
+      { type: "kontakt", link: "mailto:jakovljevicml980@gmail.com?subject=Kasko osiguranje i pomoć na putu" },
+      { type: "kupiKasko", link: "https://zmart-h5.core.uniqasee.online/sr/motor/d2c/srb/quick-quote?clientId=Wm1hcnQ6dW5pcWFzcmI6SFE&module=m_551f7a8fe58c4ce586cdba1ca968d103&agentCode=1158733&branchCode=03%2520-%2520Generalne%2520agencije&agreementCode=16119&timestamp=4933577455&salt=3bb7183d-0581-42e3-8169-2ca8924676bc&signature=d485f740d7481564151a7fbf12f9e25b957dbe5f129c6e4bc9042c479176583f&isClient=true" }, 
+      { type: "kupiPomocNaPutu", link: "https://www.uniqa.rs/UNIQA/534/Online-kupovina/Pomoc-na-putu-Web-shop?Agent=1158733"}
     ],
     span: 2,
     slug: "kasko-osiguranje-i-pomoc-na-putu"
@@ -73,7 +75,7 @@ export const services: Service[] = [
     icon: <MdHealthAndSafety />,
     buttons: [
       { type: "detalji", link: "/usluga/dobrovoljno-zdravstveno-osiguranje" },
-      { type: "kontakt", link: "mailto:mladen.jakovljevic@uniqa.rs?subject=Dobrovoljno zdravstveno osiguranje" }
+      { type: "kontakt", link: "mailto:jakovljevicml980@gmail.com?subject=Dobrovoljno zdravstveno osiguranje" }
     ],
     slug: "dobrovoljno-zdravstveno-osiguranje"
   },
@@ -82,7 +84,7 @@ export const services: Service[] = [
     desc: "Zaštitite svoje poslovanje od rizika i obezbedite stabilnost firme.",
     icon: <FaBriefcase />,
     buttons: [
-      { type: "kontakt", link: "mailto:mladen.jakovljevic@uniqa.rs?subject=Osigurajte vaš posao" },
+      { type: "kontakt", link: "mailto:jakovljevicml980@gmail.com?subject=Osigurajte vaš posao" },
     ],
     slug: "osigurajte-vas-posao"
   },
@@ -91,7 +93,7 @@ export const services: Service[] = [
     desc: "Obezbedite dodatnu sigurnost i benefite za vaš tim.",
     icon: <FaUsers />,
     buttons: [
-      { type: "kontakt", link: "mailto:mladen.jakovljevic@uniqa.rs?subject=Osigurajte vaše zaposlene" },
+      { type: "kontakt", link: "mailto:jakovljevicml980@gmail.com?subject=Osigurajte vaše zaposlene" },
     ],
     slug: "osigurajte-vase-zaposlene"
   },
@@ -100,7 +102,7 @@ export const services: Service[] = [
     desc: "Paket osiguranja predviđen za preduzetnike i preduzeća koji na vreme misle o svom poslovanju tako što određene rizike, koji mogu ugroziti neometano poslovanje, na breme prebace na UNIQA osiguranje.",
     icon: <FaChartLine />,
     buttons: [
-      { type: "kontakt", link: "mailto:mladen.jakovljevic@uniqa.rs?subject=Moj biznis" }
+      { type: "kontakt", link: "mailto:jakovljevicml980@gmail.com?subject=Moj biznis" }
     ],
     span: 3,
     lists: [
@@ -179,22 +181,35 @@ function UslugeOsiguranja() {
                     );
                   if (btn.type === "kupi")
                     return (
-                      <a key={i} href={btn.link} target="_blank" className="btn btn-primary">
+                      <a key={i} href={btn.link} target="_blank" rel="noopener noreferrer" className="btn btn-primary">
                         Kupi online
                       </a>
                     );
                   if (btn.type === "kupiIndividualno")
                     return (
-                      <a key={i} href={btn.link} className="btn btn-primary" target="_blank">
+                      <a key={i} href={btn.link} className="btn btn-primary" target="_blank" rel="noopener noreferrer">
                         Kupi individualno
                       </a>
                     );
                   if (btn.type === "kupiPorodicno")
                     return (
-                      <a key={i} href={btn.link} className="btn btn-primary" target="_blank">
+                      <a key={i} href={btn.link} className="btn btn-primary" target="_blank" rel="noopener noreferrer">
                         Kupi porodicno
                       </a>
-                    );  
+                    ); 
+                  // NOVI TIPOVI DUGMADI:
+                  if (btn.type === "kupiKasko")
+                    return (
+                      <a key={i} href={btn.link} className="btn btn-primary" target="_blank" rel="noopener noreferrer">
+                        Kupi kasko
+                      </a>
+                    );
+                  if (btn.type === "kupiPomocNaPutu")
+                    return (
+                      <a key={i} href={btn.link} className="btn btn-primary" target="_blank" rel="noopener noreferrer">
+                        Kupi pomoc na putu
+                      </a>
+                    );   
                   return null;
                 })}
               </div>

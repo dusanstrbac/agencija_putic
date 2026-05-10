@@ -19,7 +19,6 @@ function Usluga() {
     );
   }
 
-  // LOGIKA: Uvek uzmi dugmad iz osnovnog 'services' niza jer tamo imamo prave linkove
   // Filtriramo 'detalji' jer smo već na toj stranici
   const buttonsToRender = (service.buttons || []).filter(btn => btn.type !== "detalji");
 
@@ -46,22 +45,34 @@ function Usluga() {
             const isKupi = btn.type === "kupi";
             const isKupiIndividualno = btn.type === "kupiIndividualno";
             const isKupiPorodicno = btn.type === "kupiPorodicno";
+            const isKupiKasko = btn.type === "kupiKasko";
+            const isKupiPomocNaPutu = btn.type === "kupiPomocNaPutu";
+            
+            // Provera da li je bilo koji tip "kupi"
+            const isAnyKupovina = isKupi || isKupiIndividualno || isKupiPorodicno || isKupiKasko || isKupiPomocNaPutu;
+
             let buttonText = "";
-            const isAnyKupovina = isKupi || isKupiIndividualno || isKupiPorodicno;
 
-            // Provera da li je link definisan
-            if (!btn.link || btn.link === "#") {
-                if (isAnyKupovina) return null; // Ne prikazuj "Kupi" ako nema linka
-            }
-
+            // Određivanje teksta na osnovu tipa
             if (isKupi) {
               buttonText = "Kupi online";
             } else if (isKupiIndividualno) {
               buttonText = "Kupi individualno";
             } else if (isKupiPorodicno) {
               buttonText = "Kupi porodično";
-            } else {
+            } else if (isKupiKasko) {
+              buttonText = "Kupi kasko";
+            } else if (isKupiPomocNaPutu) {
+              buttonText = "Kupi pomoć na putu";
+            } else if (btn.type === "kontakt") {
               buttonText = "Kontaktiraj savetnika";
+            } else {
+              buttonText = "Saznaj više"; // Sigurnosni fallback
+            }
+
+            // Provera linka
+            if (!btn.link || btn.link === "#") {
+              if (isAnyKupovina) return null;
             }
 
             return (

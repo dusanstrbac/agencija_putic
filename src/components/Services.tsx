@@ -9,15 +9,17 @@ import {
   FaChartLine,
 } from "react-icons/fa";
 import { MdHealthAndSafety } from "react-icons/md";
+import { Link } from "react-router-dom";
 
 const services = [
   {
     title: "Putno zdravstveno osiguranje",
     desc: "Sigurno putujte uz pokriće troškova lečenja i asistenciju u inostranstvu.",
     icon: <FaPlane />,
+    slug: "putno-zdravstveno-osiguranje",
     buttons: [
       { type: "kupiIndividualno", link: "https://webshop.uniqa.rs/Putno-osiguranje/2/Individualno/Podaci-o-osiguranju?Agent=1158733" },
-      { type: "kontakt", link: "mailto:mladen.jakovljevic@uniqa.rs?subject=Putno zdravstveno osiguranje" },
+      { type: "kontakt", link: "mailto:jakovljevicml980@gmail.com?subject=Putno zdravstveno osiguranje" },
       { type: "kupiPorodicno", link: "https://webshop.uniqa.rs/Putno-osiguranje/1/Porodicno/Podaci-o-osiguranju?Agent=1158733" }
     ],
     span: 2,
@@ -26,8 +28,10 @@ const services = [
     title: "Osiguranje domaćinstva",
     desc: "Zaštitite svoj dom, imovinu i ukućane od nepredviđenih situacija.",
     icon: <FaHome />,
+    slug: "osiguranje-domacinstva",
     buttons: [
-      { type: "kontakt", link: "mailto:mladen.jakovljevic@uniqa.rs?subject=Osiguranje domaćinstva" },
+      { type: "detalji", link: "/usluga/osiguranje-domacinstva" },
+      { type: "kontakt", link: "mailto:jakovljevicml980@gmail.com?subject=Osiguranje domaćinstva" },
       { type: "kupi", link: "https://webshop.uniqa.rs/Domacinstvo/Podaci-o-objektu?Agent=1158733" }
     ],
   },
@@ -35,17 +39,22 @@ const services = [
     title: "Životno osiguranje",
     desc: "Finansijska sigurnost za vas i vašu porodicu uz dugoročnu zaštitu i štednju.",
     icon: <FaHeart />,
+    slug: "zivotno-osiguranje",
     buttons: [
-      { type: "kontakt", link: "mailto:mladen.jakovljevic@uniqa.rs?subject=Životno osiguranje" }
+      { type: "detalji", link: "/usluga/zivotno-osiguranje" },
+      { type: "kontakt", link: "mailto:jakovljevicml980@gmail.com?subject=Životno osiguranje" }
     ],
   },
   {
     title: "Kasko osiguranje i pomoć na putu",
-    desc: "Kasko osiguranje obezbeđuje zaštitu od šteta nastalih oštećenjem, uništenjem ili krađom vozila. Premija osiguranja zavisi od vrednosti, starosti i namene vozila. Uz ovaj program možete ugovoriti i osiguranje Pomoć na putu – dostupno 24 časa dnevno, 365 dana u godini, koje pruža organizovanu pomoć u slučaju kvara ili nepredviđenih situacija tokom vožnje.",
+    desc: "Kasko osiguranje obezbeđuje zaštitu od šteta nastalih oštećenjem, uništenjem ili krađom vozila. Uz ovaj program možete ugovoriti i osiguranje Pomoć na putu – dostupno 24 časa dnevno.",
     icon: <FaCar />,
+    slug: "kasko-osiguranje-i-pomoc-na-putu",
     buttons: [
-      { type: "kontakt", link: "mailto:mladen.jakovljevic@uniqa.rs?subject=Kasko osiguranje i pomoć na putu" },
-      { type: "kupi", link: "https://www.uniqa.rs/fizicka-lica/automobili-i-putovanja/pomoc-na-putu?Agent=1158733" }
+      { type: "detalji", link: "/usluga/kasko-osiguranje-i-pomoc-na-putu" },
+      { type: "kontakt", link: "mailto:jakovljevicml980@gmail.com?subject=Kasko osiguranje i pomoć na putu" },
+      { type: "kupiKasko", link: "https://zmart-h5.core.uniqasee.online/sr/motor/d2c/srb/quick-quote?clientId=Wm1hcnQ6dW5pcWFzcmI6SFE&module=m_551f7a8fe58c4ce586cdba1ca968d103&agentCode=1158733&branchCode=03%2520-%2520Generalne%2520agencije&agreementCode=16119&timestamp=4933577455&salt=3bb7183d-0581-42e3-8169-2ca8924676bc&signature=d485f740d7481564151a7fbf12f9e25b957dbe5f129c6e4bc9042c479176583f&isClient=true" },
+      { type: "kupiPomocNaPutu", link: "https://www.uniqa.rs/UNIQA/534/Online-kupovina/Pomoc-na-putu-Web-shop?Agent=1158733" }
     ],
     span: 2,
   },
@@ -53,56 +62,50 @@ const services = [
     title: "Dobrovoljno zdravstveno osiguranje",
     desc: "Brži i lakši pristup kvalitetnim zdravstvenim uslugama bez čekanja.",
     icon: <MdHealthAndSafety />,
+    slug: "dobrovoljno-zdravstveno-osiguranje",
     buttons: [
-      { type: "kontakt", link: "mailto:mladen.jakovljevic@uniqa.rs?subject=Dobrovoljno zdravstveno osiguranje" }
+      { type: "detalji", link: "/usluga/dobrovoljno-zdravstveno-osiguranje" },
+      { type: "kontakt", link: "mailto:jakovljevicml980@gmail.com?subject=Dobrovoljno zdravstveno osiguranje" }
     ],
   },
   {
     title: "Osigurajte vaš posao",
     desc: "Zaštitite svoje poslovanje od rizika i obezbedite stabilnost firme.",
     icon: <FaBriefcase />,
+    slug: "osigurajte-vas-posao",
     buttons: [
-      { type: "kontakt", link: "mailto:mladen.jakovljevic@uniqa.rs?subject=Osigurajte vaš posao" }
+      { type: "kontakt", link: "mailto:jakovljevicml980@gmail.com?subject=Osigurajte vaš posao" }
     ],
   },
   {
     title: "Osigurajte vaše zaposlene",
     desc: "Obezbedite dodatnu sigurnost i benefite za vaš tim.",
     icon: <FaUsers />,
+    slug: "osigurajte-vase-zaposlene",
     buttons: [
-      { type: "kontakt", link: "mailto:mladen.jakovljevic@uniqa.rs?subject=Osigurajte vaše zaposlene" }
+      { type: "kontakt", link: "mailto:jakovljevicml980@gmail.com?subject=Osigurajte vaše zaposlene" }
     ],
   },
   {
     title: "Moj biznis",
-    desc: "Paket osiguranja predviđen za preduzetnike i preduzeća koji na vreme misle o svom poslovanju tako što određene rizike, koji mogu ugroziti neometano poslovanje, na breme prebace na UNIQA osiguranje.",
+    desc: "Paket osiguranja predviđen za preduzetnike i preduzeća koji na vreme misle o svom poslovanju prebacujući rizik na UNIQA osiguranje.",
     icon: <FaChartLine />,
+    slug: "moj-biznis",
     buttons: [
-      { type: "kontakt", link: "mailto:mladen.jakovljevic@uniqa.rs?subject=Moj biznis" }
+      { type: "kontakt", link: "mailto:jakovljevicml980@gmail.com?subject=Moj biznis" }
     ],
     span: 3,
     lists: [
       {
         title: "Šta sve može da se osigura?",
-        items: [
-          "Građevinski objekti (poslovni prostor)",
-          "Oprema",
-          "Zalihe",
-          "Novac"
-        ]
+        items: ["Građevinski objekti", "Oprema", "Zalihe", "Novac"]
       },
       {
-        title: "Od kojih rizika može da se osigura:",
-        items: [
-          "Osnovni rizici (požar i druge opasnosti)",
-          "Rizik zemljotresa",
-          "Zaštita od provalne krađe i razbojništva",
-          "Osiguranje stakla od loma",
-          "Zaštita mašina od loma i drugih opasnosti"
-        ]
+        title: "Od kojih rizika:",
+        items: ["Požar", "Zemljotres", "Krađa", "Lom stakla", "Lom mašina"]
       }
     ],
-    footerText: "Uz sve nabrojano moguće je ostvariti popuste za neodređeno i višegodišnje trajanje osiguranja, za godišnje plaćanje premije, za preduzeće mere zaštite."
+    footerText: "Moguće je ostvariti popuste za višegodišnje trajanje i godišnje plaćanje premije."
   },
 ];
 
@@ -128,7 +131,6 @@ function Services() {
 
               <p>{service.desc}</p>
 
-              {/* Renderovanje lista za Moj biznis */}
               {service.lists && (
                 <div className="service-lists">
                   {service.lists.map((list, i) => (
@@ -144,16 +146,15 @@ function Services() {
                 </div>
               )}
 
-              {/* Footer text */}
               {service.footerText && <p className="service-footer">{service.footerText}</p>}
 
               <div className="card-buttons">
                 {service.buttons.map((btn, i) => {
                   if (btn.type === "detalji")
                     return (
-                      <a key={i} href={btn.link} className="btn btn-secondary">
+                      <Link key={i} to={btn.link} className="btn btn-secondary">
                         Detaljnije
-                      </a>
+                      </Link>
                     );
                   if (btn.type === "kontakt")
                     return (
@@ -163,20 +164,32 @@ function Services() {
                     );
                   if (btn.type === "kupi")
                     return (
-                      <a key={i} href={btn.link} className="btn btn-primary" target="_blank">
+                      <a key={i} href={btn.link} className="btn btn-primary" target="_blank" rel="noopener noreferrer">
                         Kupi online
                       </a>
                     );
                   if (btn.type === "kupiIndividualno")
                     return (
-                      <a key={i} href={btn.link} className="btn btn-primary" target="_blank">
+                      <a key={i} href={btn.link} className="btn btn-primary" target="_blank" rel="noopener noreferrer">
                         Kupi individualno
                       </a>
                     );
                   if (btn.type === "kupiPorodicno")
                     return (
-                      <a key={i} href={btn.link} className="btn btn-primary" target="_blank">
-                        Kupi porodicno
+                      <a key={i} href={btn.link} className="btn btn-primary" target="_blank" rel="noopener noreferrer">
+                        Kupi porodično
+                      </a>
+                    );
+                  if (btn.type === "kupiKasko")
+                    return (
+                      <a key={i} href={btn.link} className="btn btn-primary" target="_blank" rel="noopener noreferrer">
+                        Kupi kasko
+                      </a>
+                    );
+                  if (btn.type === "kupiPomocNaPutu")
+                    return (
+                      <a key={i} href={btn.link} className="btn btn-primary" target="_blank" rel="noopener noreferrer">
+                        Kupi pomoć na putu
                       </a>
                     );
                   return null;

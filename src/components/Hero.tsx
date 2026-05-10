@@ -9,6 +9,32 @@ const slides = [
     button: "Saznaj više",
     image: "/putno-osiguranje.jpg",
     link: "/usluga/putno-zdravstveno-osiguranje",
+    extraButtons: [
+      { 
+        text: "Kupi individualno", 
+        link: "https://webshop.uniqa.rs/Putno-osiguranje/2/Individualno/Podaci-o-osiguranju?Agent=1158733",
+        external: true
+      },
+      { 
+        text: "Kupi porodično", 
+        link: "https://webshop.uniqa.rs/Putno-osiguranje/1/Porodicno/Podaci-o-osiguranju?Agent=1158733",
+        external: true 
+      }
+    ]
+  },
+  {
+    title: "Bezbrižni na svakom kilometru",
+    subtitle: "Kompletna zaštita za vaše vozilo uz kasko osiguranje.",
+    button: "Pogledaj ponudu",
+    image: "/kasko-osiguranje.png",
+    link: "/usluga/kasko-osiguranje-i-pomoc-na-putu",
+    extraButtons: [
+      {
+        text: "Kupi online",
+        link: "https://zmart-h5.core.uniqasee.online/sr/motor/d2c/srb/quick-quote?clientId=Wm1hcnQ6dW5pcWFzcmI6SFE&module=m_551f7a8fe58c4ce586cdba1ca968d103&agentCode=1158733&branchCode=03%2520-%2520Generalne%2520agencije&agreementCode=16119&timestamp=4933577455&salt=3bb7183d-0581-42e3-8169-2ca8924676bc&signature=d485f740d7481564151a7fbf12f9e25b957dbe5f129c6e4bc9042c479176583f&isClient=true",
+        external: true
+      }
+    ]
   },
   {
     title: "Zaštitite svoj dom",
@@ -16,13 +42,20 @@ const slides = [
     button: "Pogledaj ponudu",
     image: "/domacinstvo-osiguranje.jpg",
     link: "/usluga/osiguranje-domacinstva",
+    extraButtons: [
+      {
+        text: "Kupi online",
+        link: "https://webshop.uniqa.rs/Domacinstvo/Podaci-o-objektu?Agent=1158733",
+        external: true
+      }
+    ]
   },
   {
     title: "Planirajte svoju budućnost",
     subtitle: "Životno osiguranje za vas i vašu porodicu.",
     button: "Pogledaj ponudu",
     image: "/zivotno-osiguranje.png",
-    link: "/usluga/zivotno-osiguranje",
+    link: "/usluga/zivotno-osiguranje",  
   },
 ];
 
@@ -33,14 +66,11 @@ function Hero() {
   const touchStartX = useRef(0);
   const touchEndX = useRef(0);
 
-  // AUTO SLIDE (sa pause)
   useEffect(() => {
     if (isPaused) return;
-
     const interval = setInterval(() => {
       nextSlide();
     }, 8000);
-
     return () => clearInterval(interval);
   }, [current, isPaused]);
 
@@ -52,7 +82,6 @@ function Hero() {
     setCurrent((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
   };
 
-  // SWIPE LOGIKA
   const handleTouchStart = (e: React.TouchEvent) => {
     touchStartX.current = e.touches[0].clientX;
   };
@@ -63,8 +92,8 @@ function Hero() {
 
   const handleTouchEnd = () => {
     const diff = touchStartX.current - touchEndX.current;
-    if (diff > 50) nextSlide();     // swipe left
-    if (diff < -50) prevSlide();    // swipe right
+    if (diff > 50) nextSlide();
+    if (diff < -50) prevSlide();
   };
 
   return (
@@ -89,23 +118,32 @@ function Hero() {
               <h1>{slide.title}</h1>
               <p>{slide.subtitle}</p>
 
-              {slide.link ? (
-                <a
-                  href={slide.link}
-                  className="btn btn-primary"
-                  rel="noopener noreferrer"
-                >
-                  {slide.button}
-                </a>
-              ) : (
-                <button className="btn btn-primary">{slide.button}</button>
-              )}
+              <div className="hero-btns-group">
+                {/* Glavno dugme */}
+                {slide.link && (
+                  <a href={slide.link} className="btn btn-primary">
+                    {slide.button}
+                  </a>
+                )}
+
+                {/* Dodatna dugmad */}
+                {slide.extraButtons && slide.extraButtons.map((extra, idx) => (
+                  <a
+                    key={idx}
+                    href={extra.link}
+                    className="btn btn-secondary"
+                    target="_blank" // Ovo otvara u novom tabu
+                    rel="noopener noreferrer" // Sigurnosni standard
+                  >
+                    {extra.text}
+                  </a>
+                ))}
+              </div>
             </div>
           </div>
         ))}
       </div>
 
-      {/* Strelice */}
       <button className="hero-arrow left" onClick={prevSlide} aria-label="Prethodni slajd">
         <FiChevronLeft />
       </button>
@@ -113,7 +151,6 @@ function Hero() {
         <FiChevronRight />
       </button>
 
-      {/* INDICATORS */}
       <div className="hero-dots">
         {slides.map((_, index) => (
           <span

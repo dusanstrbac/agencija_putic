@@ -25,15 +25,15 @@ function Contact() {
               </div>
               <div className="contact-item">
                 <FaEnvelope className="contact-icon" />
-                <a href="mailto:mladen.jakovljevic@uniqa.rs">
-                  mladen.jakovljevic@uniqa.rs
+                <a href="mailto:jakovljevicml980@gmail.com">
+                  jakovljevicml980@gmail.com
                 </a>
               </div>
             </div>
 
             <div className="contact-cta">
               <a
-                href="mailto:mladen.jakovljevic@uniqa.rs"
+                href="mailto:jakovljevicml980@gmail.com"
                 className="btn btn-primary"
               >
                 Pošaljite nam email
